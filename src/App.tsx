@@ -8,28 +8,31 @@ import {Pessoa} from './components/Pessoa'
 
 function App() {
  
-  let list = [
-    {name: 'a', age:10},
-    {name: 'b', age:10},
-    {name: 'c', age:10},
-    {name: 'd', age:10},
-    
-  ];
+  const [show, setShow] = useState(false);
 
-  return (
-    <div>
-      <h2>Lista</h2>
-      <ul>
-        {
-          list.map((item, index)=>(
-            <Pessoa key={index} data={item}/>
-          ))
-        }
-      </ul>
-      
-    </div>
+  const handleClick = () => {
+    setShow(!show);
     
-  );
+    // if(show){
+    //   setShow(true);
+
+    // }else{
+    //   setShow(false);
+    // }
+  }
+
+  return(
+    <div>
+      <button onClick={handleClick}>{show ? 'Ocultar' : 'Mostrar'}</button>
+
+      {
+        show === true &&
+        <div>
+          bla bla bla
+        </div>
+      }
+    </div>
+  )
   
 }
 
