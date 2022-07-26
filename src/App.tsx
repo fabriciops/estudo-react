@@ -5,27 +5,35 @@ import './App.css'
 import {Header} from './components/Header'
 
 function App() {
-  const [n, setN] = useState('0')
+  const [name, setName] = useState('')
+  const [sobrenome, setSobrenome] = useState('')
+  const [idade, setIdade] = useState('')
 
-  const handleMore = () => {
-    setN( n + 1);
-  };
 
-  const handleMinus = () => {
-    if (n == 0) {
-      setN(0);
-
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) =>{
+    console.log(event.target.name);
+    if(event.target.name == 'nome'){
+      setName(event.target.value);
+    }else if(event.target.name == 'sobrenome'){
+      setSobrenome(event.target.value);
     }else{
-      setN( n - 1);
+      setIdade(event.target.value);
     }
-    
-  };
+  }
 
   return (
     <div>
-      <button onClick={handleMinus}>-</button>
-      <div>{n}</div>
-      <button onClick={handleMore}>+</button>
+      <input type="text" value={name} onChange={handleInput} name='nome' placeholder='Nome'/>
+      <input type="text" value={sobrenome} onChange={handleInput} name='sobrenome' placeholder='Sobrenome'/>
+      <input type="text" value={idade} onChange={handleInput}  name='idade' placeholder='Idade'/>
+      <hr />
+      Olá  {name} {sobrenome}
+      <hr />
+      
+      Sua Idade  {idade}
+      <hr />
+     
+
     </div>
     
   );
