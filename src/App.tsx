@@ -3,18 +3,30 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import {Botao} from './components/Botao'
+import {Pessoa} from './components/Pessoa'
+
 
 function App() {
-  const [name, setName] = useState('')
-  let textButton = 'Clicar no Botão';
-
-  const botaoEventAction = (txt: string) => {
-    alert("frase do app");
-  }
+ 
+  let list = [
+    {name: 'a', age:10},
+    {name: 'b', age:10},
+    {name: 'c', age:10},
+    {name: 'd', age:10},
+    
+  ];
 
   return (
     <div>
-      <Botao text={textButton} clickFn={botaoEventAction} />
+      <h2>Lista</h2>
+      <ul>
+        {
+          list.map((item, index)=>(
+            <Pessoa key={index} data={item}/>
+          ))
+        }
+      </ul>
+      
     </div>
     
   );
