@@ -22,17 +22,8 @@ function App() {
   }
 
   return(
-    <div>
-      <button onClick={handleClick}>{show ? 'Ocultar' : 'Mostrar'}</button>
-
-      {
-        show === true &&
-        <div>
-          bla bla bla
-        </div>
-      }
-    </div>
-  )
+    <div className='bg-black'>...</div>
+  );
   
 }
 
