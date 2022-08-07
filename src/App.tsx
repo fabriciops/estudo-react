@@ -1,28 +1,17 @@
 import React from 'react'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import {Botao} from './components/Botao'
-import {Pessoa} from './components/Pessoa'
-
 
 function App() {
- 
-  const [show, setShow] = useState(false);
 
-  const handleClick = () => {
-    setShow(!show);
-    
-    // if(show){
-    //   setShow(true);
-
-    // }else{
-    //   setShow(false);
-    // }
-  }
 
   return(
-    <div className='bg-black'>...</div>
+    <>
+      <div className="bg-blue-900 text-white p-4 text-2x1 font-bold flex flex-col">
+        Texto Qualquer Aqui
+      </div>
+
+
+    </>
+    
   );
   
 }
