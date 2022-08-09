@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styles from './App.module.css'
 import powerImge from './assets/logo.png'
+import {levels, calculateImc} from './helpers/imc'
+import {GridItem} from './components/GridItem/index'
 
 const App = () => {
 
@@ -34,13 +36,18 @@ const App = () => {
               type="number"
               placeholder='Digite o seu peso EX: 65.5 (em Kg)' 
               onChange={e => setweightField(parseFloat(e.target.value))}
-              value={heightField > 0 ? heightField : ''}
+              value={weightField > 0 ? weightField : ''}
             />
 
             <button onClick={handleCalculateButton}>Calcular</button>
         </div>
         <div className={styles.rightSide}>
-          rightSide
+          <div className={styles.grid}>
+            {
+              levels.map((item, key)=>(
+                <GridItem key={key} x={item} />
+              ))}
+          </div>
         </div>
       </div>
     </div>
