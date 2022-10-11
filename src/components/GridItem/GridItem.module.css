@@ -24,3 +24,13 @@
     font-weight: bold;
     margin-top: 5px;
 }
+
+.gridInfo{
+    font-size: 12;
+    margin-top: 14px;
+}
+
+.yourImc{
+    font-size: 17px;
+    margin: 10px 0 50px 0;
+}

@@ -74,7 +74,8 @@ body{
     gap: 20px;
 }
 
-.gridInfo{
-    font-size: 12px;
-    margin-top: 14px;
+
+.container .rightSide .rightBig{
+    flex: 1;
+    display: flex;
 }
